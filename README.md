@@ -44,3 +44,13 @@ The childrens are going to align in one line or more lines.
 
 Allows you to order the flex items. The default order is 0
 You can use positive values from 1 and negative ones from -1
+
+## Justify content
+
+This property by default align the items in the main axis direction (left to right).
+
+By default the items are aligned at the flex start.
+
+-   Space between: Space the items between each one of them.
+-   Space around: Space the items between each of them and taking into account the left and right edges
+-   Space evenly: Space the items with a equal spacing between items.
