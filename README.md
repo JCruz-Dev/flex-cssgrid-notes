@@ -39,3 +39,8 @@ The childrens are going to align in one line or more lines.
 `flex-wrap: wrap` - if is is going to have more lines.
 
 `flex-wrap: wrap-reverse` - This property modifies the cross axis direction from bottom to top.
+
+### Order
+
+Allows you to order the flex items. The default order is 0
+You can use positive values from 1 and negative ones from -1
