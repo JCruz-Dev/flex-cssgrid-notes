@@ -60,3 +60,7 @@ By default the items are aligned at the flex start.
 This property by default align items in the cross axis direction (Top to bottom) and has a property set called `strech`
 
 `baseline` is for text or items of a flex container that aligns the vertical height
+
+### Align Content
+
+Manages the extra spacing in the cross axis (default is top to bottom). Only works when we have multiple lines of code. it needs a container to work.
