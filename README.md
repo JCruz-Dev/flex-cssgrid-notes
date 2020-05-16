@@ -54,3 +54,9 @@ By default the items are aligned at the flex start.
 -   Space between: Space the items between each one of them.
 -   Space around: Space the items between each of them and taking into account the left and right edges
 -   Space evenly: Space the items with a equal spacing between items.
+
+### Align items
+
+This property by default align items in the cross axis direction (Top to bottom) and has a property set called `strech`
+
+`baseline` is for text or items of a flex container that aligns the vertical height
