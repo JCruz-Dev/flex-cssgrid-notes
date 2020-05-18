@@ -64,3 +64,7 @@ This property by default align items in the cross axis direction (Top to bottom)
 ### Align Content
 
 Manages the extra spacing in the cross axis (default is top to bottom). Only works when we have multiple lines of code. it needs a container to work.
+
+### Align Self
+
+it applies to a individual flex item.
