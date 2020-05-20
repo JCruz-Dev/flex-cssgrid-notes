@@ -68,3 +68,15 @@ Manages the extra spacing in the cross axis (default is top to bottom). Only wor
 ### Align Self
 
 it applies to a individual flex item.
+
+### Flex
+
+Its a shorthand for Flex grow, flex shrink, flex basis.
+
+- Flex grow: Tells to he flex item to take all the space available to grow.
+- Flex basis: Determines how high or width should have the flex items. The default value is 0
+- Flex-shrink`: Determines how to manage the short space between the elements. The default value is 1
+
+```css
+flex: 1 (flex-grow) 1 (flex-shrink) 400px (flex-basis);
+```
