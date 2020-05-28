@@ -73,10 +73,31 @@ it applies to a individual flex item.
 
 Its a shorthand for Flex grow, flex shrink, flex basis.
 
-- Flex grow: Tells to he flex item to take all the space available to grow.
-- Flex basis: Determines how high or width should have the flex items. The default value is 0
-- Flex-shrink`: Determines how to manage the short space between the elements. The default value is 1
+-   Flex grow: Tells to he flex item to take all the space available to grow.
+-   Flex basis: Determines how high or width should have the flex items. The default value is 0
+-   Flex-shrink`: Determines how to manage the short space between the elements. The default value is 1
 
 ```css
 flex: 1 (flex-grow) 1 (flex-shrink) 400px (flex-basis);
+```
+
+---
+
+### CSS Grid
+
+Is a Layout system for CSS that can handle columns and rows (2 dimensional).
+
+When display grid is declared in our css every item inside that grid container transforms into a grid item.
+
+`grid-template-colums` : defines how many columns to display the content and the rows are automaticly created (implicitly created by the browser)
+
+`grid-gap`: defines space between the grid items in the column and row side
+
+Defining your columns in the grid-template columns property you can have a value `auto` where the grid item takes the available space between the other columns properties values written
+
+```css
+.container {
+    display: grid;
+    grid-template-columns: 100px auto 200px 50px;
+}
 ```
