@@ -1,6 +1,4 @@
-# flex-cssgrid-notes
-
-## Flexbox
+# Flexbox
 
 Is a new layout model that allows aligning in a horizontal and vertical way the elements and this elements can compress and expand. To be functional, it needs a father container called flex container and children called as items
 
@@ -81,9 +79,7 @@ Its a shorthand for Flex grow, flex shrink, flex basis.
 flex: 1 (flex-grow) 1 (flex-shrink) 400px (flex-basis);
 ```
 
----
-
-### CSS Grid
+# CSS Grid
 
 Is a Layout system for CSS that can handle columns and rows (2 dimensional).
 
@@ -99,5 +95,63 @@ Defining your columns in the grid-template columns property you can have a value
 .container {
     display: grid;
     grid-template-columns: 100px auto 200px 50px;
+}
+```
+
+`grid-auto-rows`: this property makes changes to grid items added dinamicly or that surpass the rows explicit defined.
+
+`grid-auto-flow`: this property tells de browser that the grid items created implicitly will place in a certain direction column or row (default).
+
+`grid-auto-columns`: tells the browser the width of the implicitly created columns
+
+`Fractional units (fr)`: Represent the amaunt of space left while elements are laid out. You can use percetages, rems/ems, pixels. in any case Wesbos uses rems and fr units.
+
+`repeat`: its a function to set the width of columns or rows without having to write the values. it takes to arguments: Number of repetitions and unit
+
+```css
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+```
+
+You can even mix it with the other values
+
+```css
+.container {
+    display: grid;
+    grid-template-columns: 100px repeat(4, 1fr) 200px;
+    grid-template-columns: 100px repeat(4, 1fr auto) 200px;
+    /* This will give us 8 columns alternating the width with 1 fr and 2 fr ( 4 columns with 1 fr width and other 4 columns with 2fr width). The 4 multiplies with the 1fr and then 2fr */
+    grid-template-columns: 100px repeat(4, 1fr 2fr) 200px;
+}
+```
+
+## CSS Grid - Sizing
+
+To size grid items we have to use the value `span` on the property `grid-column`. If we use width, is going to resize all grid items next to the one or column is the width applied. the same concept can be applied to rows with `grid-row` property.
+
+`grid-column` is a shorthand for: - grid-column-start - grid-column-end
+
+```css
+.item {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+```
+
+Spread and item across the entire grid:
+`grid-column: 1/-1` the `-1` indicates that will spand to the last column
+Note: This can be done in the grid-row too. Example `grid-row: 1/-1`
+
+## CSS GRID - Auto properties & minMax
+
+`auto-fill`: tells the browser that he decides how many items fit in a container depending on the containers width. Without too many items to take space on screen, it will create automaticly columns to use depending on the available space.
+`auto-fit`: tells the browser how to resize the content depending on its width and adjusting it to the grid.
+`minmax`: minimum value that the content will shrink and max value that the content will grow. This can be used with the withing the repeat funcion in css.
+
+```css
+.container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1f));
 }
 ```
