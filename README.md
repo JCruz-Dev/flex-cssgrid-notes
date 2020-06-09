@@ -141,17 +141,77 @@ To size grid items we have to use the value `span` on the property `grid-column`
 ```
 
 Spread and item across the entire grid:
-`grid-column: 1/-1` the `-1` indicates that will spand to the last column
+`grid-column: 1/-1` the `-1` indicates that will spand to the last column.
+
 Note: This can be done in the grid-row too. Example `grid-row: 1/-1`
 
 ## CSS GRID - Auto properties & minMax
 
 `auto-fill`: tells the browser that he decides how many items fit in a container depending on the containers width. Without too many items to take space on screen, it will create automaticly columns to use depending on the available space.
+
 `auto-fit`: tells the browser how to resize the content depending on its width and adjusting it to the grid.
+
 `minmax`: minimum value that the content will shrink and max value that the content will grow. This can be used with the withing the repeat funcion in css.
 
 ```css
 .container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1f));
+}
+```
+
+## CSS Grid - Grid template Areas
+
+The template areas let us organize our grid items into an specific layout that we want. Distributing the items depending on the area.
+
+```css
+.container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 500px 1fr;
+    grid-template-rows: 150px 150px 150px 100px;
+    grid-template-areas:
+        'sidebar-1 content sidebar-2'
+        'sidebar-1 content sidebar-2'
+        'footer footer footer';
+}
+.item1 {
+    grid-area: sidebar-1;
+}
+.item2 {
+    grid-area: content;
+}
+.item3 {
+    grid-area: sidebar-2;
+}
+.footer {
+    grid-area: footer;
+}
+```
+
+We also con apply media queries and change the template areas if we want
+
+```css
+@media screen and (min-width: 700px) {
+    .container {
+        grid-template-areas:
+            'content content content'
+            'sidebar-1 sidebar-1 sidebar-2'
+            'footer footer footer';
+    }
+}
+```
+
+We can define columns with the `template-areas` property without having `grid-template-columns`defined
+
+```css
+.container {
+    display: grid;
+    grid-gap: 20px;
+    /* We are defininf 8 columns and 4 rows */
+    grid-template-areas:
+        'A A A A B B B B '
+        'A A A A B B B B '
+        'A A A A B B B B '
+        'A A A A B B B B ';
 }
 ```
