@@ -215,3 +215,31 @@ We can define columns with the `template-areas` property without having `grid-te
         'A A A A B B B B ';
 }
 ```
+
+## CSS GRID - grid auto flow dense
+
+When we explicitly create a grid width different sizes sometimes a grid item wont fit in the line and goes to the next row creating an space between this item and the other ones behind him.
+
+To solves this particular scenario we can use `grid-auto-flow: dense` and the browser will check and fill the empty spaces with the grid items that actually can fit in that space.
+
+## CSS Grid - Aligning in CSS Grid
+
+-   justify-items (strech property is the default one)
+-   align-items
+-   justify-content
+-   align-content
+-   align-self
+-   justify-self
+
+justify is a row axis
+align is a column axis
+
+A shorthand for using justify items and align items, we can use `place-items: (justify) (align)`
+
+```css
+.container {
+    display: grid;
+    place-items: center center;
+}
+```
+They do not switch like in flexbox
